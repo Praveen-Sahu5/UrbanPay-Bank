@@ -11,6 +11,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="images/logo-transparent-png.png">
     <title>UrbanPay Bank - Home</title>
   </head>
   <body>
@@ -20,6 +21,7 @@
         <a href="home.html" class="logo">
           <img src="images/logo-transparent-png.png" alt="logoImage" />
         </a>
+        <h3>UrbanPay Bank</h3>
 
         <nav class="navbar">
           <ul>
@@ -186,7 +188,7 @@
         </div>
       </section>
     </div>
-    <!-------------------Account section ended--------->
+    <!-------------------Account section ended------------>
 
     <!-------------------App section started------------->
     <section class="container app-feature">
@@ -214,18 +216,122 @@
     </section>
     <!-------------------App section ended--------------->
     
+    <!--------------------Solution section started-------->
+    <div class="solution-feature">
+      <section class="flex">
+        <div class="image">
+          <img src="images/solution.png" alt="image">
+        </div>
 
+        <div class="content">
+          <h3>need a personalized solution?</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ab rem nisi rerum repellendus aliquam, blanditiis minima laudantium odit fuga.</p>
+          <a href="contact.html" class="btn">contact us</a>
+        </div>
+      </section>
+    </div>
+    <!--------------------Solution section ended---------->
 
+    <!---------------------Loan section started------------>
+    <section class="loan-features">
+      <div class="row">
+        <div class="content">
+          <span>financial planning</span>
+          <h3>Quick and easy loan planning</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, aspernatur! Tenetur eaque laudantium dolor harum debitis!</p>
+          <a href="#" class="btn">apply for loan</a>
+        </div>
 
+        <div class="box-container">
+          <div class="box">
+            <img src="images/home-loan.png" alt="image">
+            <h3>home loan</h3>
+            <p><i class="fas fa-check"></i> lowest interest rate </p>
+            <p><i class="fas fa-check"></i> fast loan processing</p>
+          </div>
 
+          <div class="box">
+            <img src="images/car-loan.png" alt="image">
+            <h3>car loan</h3>
+            <p><i class="fas fa-check"></i> lowest interest rate </p>
+            <p><i class="fas fa-check"></i> fast loan processing</p>
+          </div>
 
+          <div class="box">
+            <img src="images/bussiness-loan.png" alt="image">
+            <h3>bussiness loan</h3>
+            <p><i class="fas fa-check"></i> lowest interest rate </p>
+            <p><i class="fas fa-check"></i> fast loan processing</p>
+          </div>
 
+          <div class="box">
+            <img src="images/education-loan.png" alt="image">
+            <h3>education loan</h3>
+            <p><i class="fas fa-check"></i> lowest interest rate </p>
+            <p><i class="fas fa-check"></i> fast loan processing</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---------------------Loan section ended-------------->
 
+    <!---------------------EMI Calculator started---------->
+    <section class="emi-calculator">
+      <div class="row">
+        <form action="">
+          <h3>calculate your EMI</h3>
+          
+          <p>loan amount (₹)</p>
+          <input type="number" id="amount" placeholder="enter loan amount" min="10000" max="10000000" maxlength="8" required class="input">
 
+          <p>interest rate (%)</p>
+          <input type="number" id="interest" placeholder="enter interest rate" min="1" max="99" maxlength="4" step="0.01" required class="input">
 
+          <p>loan tenure (yr/mo)</p>
+          <input type="number" id="loanTenure" placeholder="enter loan duration" min="1" max="366" maxlength="3"  required class="input">
 
+          <div class="tenure">
+            <input type="radio" name="button" id="year" checked>
+            <label for="year" class="active">yearly</label>
 
+            <input type="radio" name="button" id="month">
+            <label for="month">monthly</label>
+          </div>
+          <button class="btn" id="calculate">calculate EMI</button>
+        </form>
 
+        <div class="output">
+          <p>monthly EMI</p>
+          <div id="emi">00</div>
+
+          <p>total interest</p>
+          <div id="totalInterest">00</div>
+
+          <p>total payment</p>
+          <div id="totalPayment">00</div>
+        </div>
+      </div>
+    </section>
+    <!---------------------EMI Calculator ended------------>
+
+    <!----------------------Get started section started----->
+
+    <section class="get-started">
+      <div class="row">
+        <div class="content">
+          <h3>Ready to get start</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, itaque.</p>
+          <a href="#" class="btn">open account</a>
+        </div>
+
+        <div class="image">
+          <img src="images/get-started.png" alt="image">
+        </div>
+
+      </div>
+    </section>
+
+    <!----------------------Get started section ended-------->
 
 
 
@@ -301,7 +407,7 @@
       </section>
 
       <div class="credit">
-        created by <span>@Praveen_Developer</span> | all rights reserved @2025 !
+        created by <span>@Gen-ZDebugger</span> | all rights reserved @2025 !
       </div>
     </footer>
     <!----------------Footer section started---------->

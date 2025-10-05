@@ -1,3 +1,5 @@
+//javascript code for hamburgger 
+
 let menuBtn = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.header .navbar');
 
@@ -78,3 +80,48 @@ document.addEventListener('DOMContentLoaded', () => {
         removeNavbar();
     }
 });
+
+
+//javascript code of emi calculator
+if (document.querySelector('.emi-calculator')) {
+
+    let loanAmount = document.getElementById('amount');
+    let loanInterest = document.getElementById('interest');
+    let loanTenure = document.getElementById('loanTenure');
+    let calculate = document.getElementById('calculate');
+
+    calculate.onclick = (e) => {
+        e.preventDefault();
+
+        let isYear = document.getElementById('year').checked;
+        let isMonth = document.getElementById('month').checked;
+        let noOfMonths = 0;
+
+        if (!isYear && !isMonth) {
+            alert("Please select the loan tenure, either monthly or yearly");
+        } else {
+            if (isYear) {
+                noOfMonths = loanTenure.value * 12;
+            } else {
+                noOfMonths = loanTenure.value;
+            }
+
+            let r = parseFloat(loanInterest.value) / 12 / 100;
+            let p = parseFloat(loanAmount.value);
+            let n = parseInt(noOfMonths);
+
+            if (r === 0) {
+                emi = p / n;
+            } else {
+                var emi = (p * r * Math.pow((1 + r), n)) / (Math.pow((1 + r), n) - 1);
+            }
+
+            let totalPayment = emi * n;
+            let totalInterest = totalPayment - p;
+
+            document.getElementById('emi').innerHTML = '₹ ' + Math.round(emi);
+            document.getElementById('totalInterest').innerHTML = '₹ ' + Math.round(totalInterest);
+            document.getElementById('totalPayment').innerHTML = '₹ ' + Math.round(totalPayment);
+        }
+    }
+}
