@@ -1,5 +1,4 @@
 //javascript code for hamburgger 
-
 let menuBtn = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.header .navbar');
 
@@ -81,6 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+document.querySelectorAll('input[type="number"]').forEach(inputNumber => {
+    inputNumber.oninput = () => {
+        if(inputNumber.value.length > inputNumber.maxLength) {
+            inputNumber.value = inputNumber.value.slice(0, inputNumber.maxLength);
+        };
+    };
+
+});
+
+
+
 
 //javascript code of emi calculator
 if (document.querySelector('.emi-calculator')) {
@@ -122,6 +132,34 @@ if (document.querySelector('.emi-calculator')) {
             document.getElementById('emi').innerHTML = '₹ ' + Math.round(emi);
             document.getElementById('totalInterest').innerHTML = '₹ ' + Math.round(totalInterest);
             document.getElementById('totalPayment').innerHTML = '₹ ' + Math.round(totalPayment);
+        }
+    }
+}
+
+
+
+//javascript code for reviews section
+if(document.querySelector('.reviews')) {
+    let reviews_slider = document.querySelector('.reviews .reviews-slider');
+
+    let first_slide = reviews_slider.querySelector('.slider:first-child').clientWidth + 20;
+    let nextBtn = document.getElementById('next-btn');
+    let prevBtn = document.getElementById('prev-btn');
+
+    nextBtn.onclick = () => {
+        reviews_slider.style.scrollBehavior = 'smooth';
+        reviews_slider.scrollLeft += first_slide;
+        if(reviews_slider.scrollLeft >= (reviews_slider.scrollWidth - reviews_slider.clientWidth - 5)) {
+            reviews_slider.scrollLeft = 0;
+        }
+    }
+
+    prevBtn.onclick = () => {
+        reviews_slider.style.scrollBehavior = 'smooth';
+        reviews_slider.scrollLeft -= first_slide;
+        if(reviews_slider.scrollLeft <= 5) {
+            let maxScroll = reviews_slider.scrollWidth - reviews_slider.clientWidth;
+            reviews_slider.scrollLeft = maxScroll;
         }
     }
 }
